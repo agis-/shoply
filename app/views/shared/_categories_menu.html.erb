@@ -1,0 +1,13 @@
+<div class="tabbable tabs-left" id="categories">
+  <ul class="nav nav-tabs">
+    <li <%= raw 'class="active"' unless params[:c] %>>
+      <%= link_to 'Όλα τα προϊόντα', @city or @vendor %>
+    </li>
+
+    <% categories.each do |category| %>
+    <li <%= raw 'class="active"' if active_category?(category) %>>
+      <%= link_to category.title, "?c=#{category.id}" %>
+    </li>
+    <% end %>
+  </ul>
+</div>

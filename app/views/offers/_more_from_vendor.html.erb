@@ -17,14 +17,14 @@
 
       <div class="price">
         <div class="price-inner">
-        <span class="initial"><%= format_price(offer.initial_price) %></span>
-        <span class="current"><%= format_price(offer.price) %></span>
+        <span class="initial"><%= price(offer.initial_price) %></span>
+        <span class="current"><%= price(offer.price) %></span>
       </div class="price-inner">
       </div>
 
       <div class="discount">
         <div class="discount-inner">
-          -35%
+          <%= discount(offer) %>
         </div>
       </div>
 
@@ -45,7 +45,5 @@
     <h3><%= link_to offer.vendor.name, vendor_path(offer.vendor) %></h3>
   </div>
   <% end %>
-
-</div>
 
 </div>

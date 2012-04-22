@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.2'
+gem 'rails', '3.2.3'
 gem 'jquery-rails'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'date_validator', '~> 0.6.3'
@@ -9,11 +9,11 @@ gem 'will_paginate', '~> 3.0'
 
 group :test do
   gem 'capybara', '1.1.2'
-  gem 'factory_girl_rails', '1.4.0'
+  gem 'factory_girl_rails', '~> 3.0'
 end
 
 group :test, :development do
-  gem 'rspec-rails', '~> 2.8.1'
+  gem 'rspec-rails', '~> 2.9.0'
   gem 'sqlite3'
 end
 
@@ -29,4 +29,3 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem 'twitter-bootstrap-rails'
   gem 'less'
-end

@@ -1,10 +1,6 @@
-<% provide :sidebar, 'categories' %>
+<% provide :sidebar, 'shared/categories_menu' %>
 <% title @city.name %>
 
-<!-- <div class="row-fluid">
-  <div class="span12">
-    <h1>Προσφορές σε <%= @city.name %></h1>
-  </div>
-</div> -->
+<%= render 'offers/sortby_links' %>
 
-<%= render partial: "offers/offers", object: @offers %>
+<%= render partial: 'offers/offers', object: @offers %>

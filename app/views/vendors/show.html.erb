@@ -1,4 +1,4 @@
-<% provide :sidebar, 'categories' %>
+<% provide :sidebar, 'shared/categories_menu' %>
 <% provide :title, @vendor.name %>
 
 <div class="row-fluid">
@@ -7,4 +7,6 @@
   </div>
 </div>
 
-<%= render partial: "offers/offers", object: @offers %>
+<%= render 'offers/sortby_links' %>
+
+<%= render partial: 'offers/offers', object: @offers %>

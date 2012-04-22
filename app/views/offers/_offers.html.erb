@@ -1,5 +1,4 @@
 <% render 'offers/sortby_links' %>
-<% render 'offers/breadcrumbs' %>
 
 <% offers.each_slice(4) do |offers_for_row| %>
   <div class="row-fluid row-offers">
@@ -15,4 +14,7 @@
     </button>
   </div>
 </div>
+
+<%= will_paginate offers %>
 <% end %>
+

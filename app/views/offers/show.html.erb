@@ -1,9 +1,9 @@
-<% title @offer.title + " / " + @offer.vendor.name %>
+<% title @offer.title + " / " + @vendor.name %>
 
 <div class="row-fluid">
   <div class="span12 offer-title">
     <h1><%= @offer.title %></h1>
-    <h2 class="vendor">από <%= link_to @offer.vendor.name, vendor_path(@offer.vendor) %></h2>
+    <h2 class="vendor">από <%= link_to @vendor.name, @vendor %></h2>
   </div>
 </div>
 
@@ -16,8 +16,12 @@
     <div class="row-fluid" id="offer-value">
       <div class="span3" id="offer-price">
         <div class="inner">
-          <span class="price"><%= format_price(@offer.price) %></span>
-          <span class="initial-price">από <%= format_price(@offer.initial_price) %></span>
+          <span class="price">
+            <%= price(@offer.price) %>
+          </span>
+          <span class="initial-price">
+            από <%= price(@offer.initial_price) %>
+          </span>
         </div>
       </div>
 
@@ -26,14 +30,14 @@
           <div class="span4 info-section first">
             <div class="inner">
               <h5>έκπτωση</h5>
-              <%= discount(@offer.price, @offer.initial_price) %>
+              <%= discount(@offer) %>
             </div>
           </div>
 
           <div class="span4 info-section">
             <div class="inner">
               <h5>κερδίζετε</h5>
-              <%= win(@offer.price, @offer.initial_price) %>
+              <%= win(@offer) %>
             </div>
           </div>
 
@@ -51,7 +55,7 @@
     <div class="row-fluid" id="offer-expiry">
       <div class="span12">
         <hr />
-        Λήγει σε: <span style="font-size: 20px"><%= distance_of_time_in_words(Time.now, @offer.expires_on + 1)  %></span>
+        Λήγει σε: <span style="font-size: 20px"><%= expires(@offer)  %></span>
         <hr />
       </div>
     </div>
@@ -62,5 +66,4 @@
     </div>
 
   </div>
-
 </div>

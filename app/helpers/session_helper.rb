@@ -1,4 +1,8 @@
 module SessionHelper
+  def redirect_if_no_cookie
+    redirect_to welcome_path unless stored_city? || params.has_key?(:selected_city)
+  end
+
   def reset_vendor
     session[:vendor_id] = nil
   end
@@ -14,9 +18,4 @@ module SessionHelper
   def stored_vendor?
     !session[:vendor_id].nil?
   end
-
-  def redirect_if_no_cookie
-    redirect_to welcome_path unless stored_city?
-  end
-
 end

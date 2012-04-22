@@ -3,19 +3,14 @@ class VendorsController < ApplicationController
 
   def show
     category = params[:c]
-    @vendor = Vendor.find_by_username(params[:vendor])
+    @vendor = Vendor.find(params[:id])
 
     if category
-      @offers = @vendor.offers.active.where("category_id = #{category}")
+      @offers = @vendor.offers.active.where("category_id = #{category}").paginate(:page => params[:page])
     else
-      @offers = @vendor.offers.active
+      @offers = @vendor.offers.active.paginate(:page => params[:page])
     end
-    store_vendor
-  end
-
-  private
-
-  def store_vendor
     session[:vendor_id] = @vendor.id
   end
+
 end

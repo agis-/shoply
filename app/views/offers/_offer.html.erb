@@ -2,7 +2,6 @@
   <div class="offer">
     <%= link_to offer do %>
     <div class="inner">
-
       <div class="image">
         <div>
           <%= image_tag offer.image.url :thumb %>
@@ -11,29 +10,25 @@
 
       <div class="price">
         <div class="price-inner">
-        <span class="initial"><%= format_price(offer.initial_price) %></span>
-        <span class="current"><%= format_price(offer.price) %></span>
+        <span class="initial"><%= price(offer.initial_price) %></span>
+        <span class="current"><%= price(offer.price) %></span>
       </div class="price-inner">
       </div>
 
       <div class="discount">
         <div class="discount-inner">
-          -35%
+          <%= discount(offer) %>
         </div>
       </div>
 
-      <h2>
-        <%= offer.title %>
-      </h2>
-
+      <h2><%= offer.title %></h2>
     </div>
     <% end %>
   </div>
 
   <% unless controller_name == 'vendors' || controller_name == 'offers' %>
   <div class="vendor">
-    <h3><%= link_to offer.vendor.name, vendor_path(offer.vendor) %></h3>
+    <h3><%= link_to offer.vendor.name, offer.vendor %></h3>
   </div>
   <% end %>
-
 </div>

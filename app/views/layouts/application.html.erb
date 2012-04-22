@@ -2,8 +2,8 @@
 <html>
 <head>
   <title><%= yield :title %> - Shoply</title>
-  <%= stylesheet_link_tag "application", media: "all" %>
-  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag     "application", media: "all" %>
+  <%= javascript_include_tag  "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -22,33 +22,10 @@
   </div>
 
   <%= render 'shared/vendors_bar' if controller_name == 'cities' %>
-
-<div class="row-fluid" id="footer">
-  <hr />
-  <div class="span5">
-
-  </div>
-
-  <div class="span6">
-
-  </div>
+  <%= render 'shared/footer' %>
 </div>
 
-
-</div>
-
-
-<% if Rails.env.development? %>
-Session:
-<p><%= debug(session) %></p>
-
-Params:
-<p><%= debug(params) %></p>
-
-Cookies:
-<p><%= debug(cookies) %></p>
-<% end %>
-
+<%= render 'shared/debug' %>
 
 </body>
 </html>

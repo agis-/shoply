@@ -4,7 +4,15 @@ class Offer < ActiveRecord::Base
   belongs_to :vendor
   belongs_to :category
 
-  has_attached_file :image, styles: { thumb: '150x150>', normal: '250x250>' }
+  has_attached_file :image,
+                    styles: { thumb: '150x150>', normal: '250x250>' },
+                    storage: :s3,
+                    bucket:  'shoply',
+                    s3_credentials: {
+                      access_key_id: 'AKIAJS5LXFFIXGEZFL3A',
+                      secret_access_key: '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'
+                    },
+                    s3_host_name: 's3-eu-west-1.amazonaws.com'
 
   validates :vendor_id, presence: true
   validates :category_id, presence: true

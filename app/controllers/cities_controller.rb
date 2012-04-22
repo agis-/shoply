@@ -12,6 +12,10 @@ class CitiesController < ApplicationController
     end
   end
 
+  def welcome
+    redirect_to root_path
+  end
+
   protected
   def set_cookie_and_params
     if params.has_key?(:selected_city) # then he's coming from the welcome page

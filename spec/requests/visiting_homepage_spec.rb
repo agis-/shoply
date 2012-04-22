@@ -6,21 +6,17 @@ describe "Visiting the homepage" do
 
   subject { page }
 
-  describe "for the first time" do
-    it "redirects to the Welcome page" do
-      visit '/'
-      current_path.should == welcome_path
-      should have_content 'Επιλέξτε την πόλη σας:'
-    end
+  it "redirects to choose City" do
+    visit '/'
+    current_path.should == welcome_path
+    should have_content 'Επιλέξτε την πόλη σας:'
   end
 
-  describe "for the second time" do
-    it "redirects to the city show page" do
-      visit '/'
-      select city.name
-      click_button 'Συνέχεια'
-      visit '/'
-      current_path.should == root_path
-    end
+  it "takes you in" do
+    visit '/'
+    select city.name
+    click_button 'Συνέχεια'
+    visit '/'
+    current_path.should == root_path
   end
 end

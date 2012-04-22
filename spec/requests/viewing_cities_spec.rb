@@ -1,7 +1,7 @@
 # encoding: utf-8
 require 'spec_helper'
 
-feature "Viewing a Vendor page" do
+feature "Viewing a City page" do
   let!(:city)   { FactoryGirl.create(:city) }
   let!(:vendor) { FactoryGirl.create(:vendor) }
 
@@ -9,7 +9,7 @@ feature "Viewing a Vendor page" do
 
   context "as a new user" do
     it "redirects you to choose City" do
-      visit vendor_path(vendor)
+      visit city_path(city)
       current_path.should == welcome_path
     end
   end
@@ -19,26 +19,26 @@ feature "Viewing a Vendor page" do
       visit '/'
       select city.name
       click_button 'Συνέχεια'
-      visit vendor_path(vendor)
+      visit city_path(city)
     end
 
-    it "takes you in if you've chosen a City" do
-      current_path.should == vendor_path(vendor)
+    it "takes you in" do
+      current_path.should == city_path(city)
     end
 
-    it "sets the vendor in the navbar" do
-      should have_css 'a.dropdown-toggle', text: vendor.name
+    it "defaults to all vendors in the navbar" do
+      should have_css 'a.dropdown-toggle', text: 'Όλα τα Supermarkets'
     end
 
     it "selects the correct City in the navbar" do
       should have_css 'a.dropdown-toggle', text: city.name
     end
 
-    it "displays the proper heading" do
-      should have_selector 'h1', text: vendor.name
+    it "lists Offers from Vendors in that city" do
+      # pending
     end
   end
 end
 
-# check that the vendors offers are listed
-# test for displays the categories menu
+# the vendors offers are listed
+# displays the categories menu

@@ -1,8 +1,8 @@
 Deals::Application.routes.draw do
   root to: 'Cities#show'
 
-  get '/welcome'        =>      'Welcome#home', :as => :welcome
-  post '/welcome' => 'Cities#welcome'
+  get   '/welcome'        =>      'Welcome#home'
+  post  '/welcome'        =>      'Cities#welcome'
   match '/admin'          =>      'Admin::Pages#index'
 
   resources :cities,      only: :show

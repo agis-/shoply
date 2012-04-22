@@ -4,7 +4,7 @@
 
 <div class="span6 right">
 
-  <%= form_tag root_path do %>
+  <%= form_tag welcome_path do %>
     <label>Επιλέξτε την πόλη σας:</label>
     <%= collection_select(:selected_city, :id, City.all, :id, :name) %>
     <br />

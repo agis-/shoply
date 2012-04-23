@@ -1,10 +1,10 @@
 <div class="row-fluid offersnav">
   <div class="span12">
     <div class="span3 link<%= " active" if params[:action] == 'show' %>">
-      <%= link_to "Τελευταίες", root_path %>
+      <%= link_to "Τελευταίες", vendor_path(@vendor) %>
     </div>
     <div class="span3 link<%= " active" if params[:action] == 'expiring' %>">
-      <%= link_to "Λήγουν σύντομα", root_path %>
+      <%= link_to "Λήγουν σύντομα", expiring_vendor_path(@vendor) %>
     </div>
     <div class="span3 link<%= " active" if params[:action] == 'popular' %>">
       <%= link_to "Μεγαλύτερες εκπτώσεις", "#" %>

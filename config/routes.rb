@@ -8,11 +8,15 @@ Deals::Application.routes.draw do
   resources :cities, only: :show do
     member do
       get 'expiring'
-      get 'best'
-      get 'popular'
     end
   end
-  resources :vendors, only: :show
+
+  resources :vendors, only: :show do
+    member do
+      get 'expiring'
+    end
+  end
+
   resources :offers, only: :show
 
   namespace :admin do

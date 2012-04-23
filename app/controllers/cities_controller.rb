@@ -18,10 +18,6 @@ class CitiesController < ApplicationController
     render 'show'
   end
 
-  def best
-    # TO-DO
-  end
-
   def welcome
     redirect_to root_path
   end

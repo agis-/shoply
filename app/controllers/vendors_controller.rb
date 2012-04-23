@@ -1,5 +1,6 @@
 class VendorsController < ApplicationController
   before_filter :redirect_if_no_cookie
+  before_filter :set_vendor
 
   def show
     @vendor = Vendor.find(params[:id])
@@ -8,7 +9,17 @@ class VendorsController < ApplicationController
     else
       @offers = @vendor.offers.active.page(params[:page])
     end
-    session[:vendor_id] = @vendor.id
   end
 
+  def expiring
+    @vendor = Vendor.find(params[:id])
+    @offers = @vendor.offers.expiring.page(params[:page])
+    render 'show'
+  end
+
+  private
+
+  def set_vendor
+    session[:vendor_id] = params[:id]
+  end
 end

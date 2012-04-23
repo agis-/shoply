@@ -6,11 +6,9 @@
 @iconWhiteSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings-#fff.png');
 
 
-/*    VARIABLES    */
-
+/*    LESS VARIABLES    */
 
 /* original palette */
-
 @borderLightGrey: #DADBE4;
 @paletteDarkBlue: #182945;
 @paletteBlue: #46A5E5;
@@ -20,12 +18,10 @@
 
 
 /* typography colors */
-
 @linksBlue: #419BD7;
 
 
 /* Bootstrap overrides */
-
 @navbarBackground: #14243F;
 @navbarBackgroundHighlight: #182E58;
 
@@ -40,9 +36,6 @@
   display: table-cell;
   vertical-align: middle;
 }
-
-
-
 
 
 
@@ -78,13 +71,13 @@ a {
 
 
 /*          MISC                */
+
 .tabs-left .nav-tabs {
   float:none;
   margin: 0;
   font-size: 12px;
   font-weight: bold;
   text-align: right;
-
   .active a { color: #333; }
   a { color: #999; }
 }
@@ -93,7 +86,6 @@ a {
 
 #vendors-bar {
   text-align: center;
-
   h4 {
     font-weight: normal;
     color: #999;
@@ -115,36 +107,27 @@ a {
 .navbar-fixed-top { margin: 0; }
 
 .fp {
-
   .navbar-inner {
     height: 50px;
     .menu { padding-top: 4px; }
   }
-
   img {
     float: left;
     padding-top: 5px;
     margin-right: 30px;
   }
-
   .vendor { font-size: 19px; }
-
   .city {
     font-size: 17px;
     margin-left: 40px;
   }
-
    a.dropdown-toggle { font-weight: normal; }
-
- 
-
   .nav .active > a { .border-radius() }
   .nav > li > a { margin-left: 20px; }
   .dropdown-menu { left: 28px; font-size:15px; }
 }
 
 .navbar-inner { border-radius: 0; }
-
 .caret {
   border: none;
   width: 8px;
@@ -194,8 +177,6 @@ a {
     display: table;
     .square(55px);
     #gradient > .vertical(#A1C436,#7E9B2B);
-
-
     .price-inner { .vertical-align; }
 
     span.initial {
@@ -274,15 +255,14 @@ div.vendor h3 a {
     margin-left: 0px;
   }
 
-  .active a { color: @paletteDarkBlue; }
-  a { color: #999;}
-  a:hover { color: #666; text-decoration:none; }
-
   .span12 {
     .border-bottom;
-
     margin-bottom: 18px;
   }
+
+  a:hover { color: #666; text-decoration:none; }
+  a { color: #999;}
+  .active a { color: @paletteDarkBlue; }
 }
 
 
@@ -298,7 +278,6 @@ div.vendor h3 a {
 #offers {
   .offer-title {
     .border-bottom;
-
     margin-bottom: 15px;
     padding-bottom: 9px;
   }
@@ -383,21 +362,22 @@ div.vendor h3 a {
   #offer-share {
     a { font-weight: normal; }
     .recommend { margin-top: 7px; }
-
     .share {
       margin-top: 20px;
     }
   }
 }
 
-div#more-from-vendor { margin-top: 100px; border-top: 1px solid #ddd; padding-top: 30px;}
+div#more-from-vendor {
+  margin-top: 100px;
+  border-top: 1px solid #ddd;
+  padding-top: 30px;
+}
 
 
 
 
 /*            CATEGORIES SIDEMENU                     */
-
-
   .tabs-left .nav-tabs a { color: #888; }
 
 
@@ -434,7 +414,6 @@ body#welcome {
     font-size: 30px;
     color: @paletteGrey;
   }
-
   input.btn { padding: 10px 30px; }
 }
 

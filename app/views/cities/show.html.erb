@@ -1,6 +1,6 @@
 <% provide :sidebar, 'shared/categories_menu' %>
 <% title @city.name %>
 
-<%= render 'offers/sortby_links' %>
+<%= render 'sortby_links' if params[:c].nil? %>
 
 <%= render partial: 'offers/offers', object: @offers %>

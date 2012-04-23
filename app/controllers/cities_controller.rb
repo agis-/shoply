@@ -12,11 +12,22 @@ class CitiesController < ApplicationController
     end
   end
 
+  def expiring
+    @city = City.find(params[:id])
+    @offers = @city.offers.expiring.page(params[:page])
+    render 'show'
+  end
+
+  def best
+    # TO-DO
+  end
+
   def welcome
     redirect_to root_path
   end
 
   protected
+
   def set_cookie_and_params
     if params.has_key?(:selected_city) # then he's coming from the welcome page
       params[:id]       = params[:selected_city][:id]

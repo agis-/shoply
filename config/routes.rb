@@ -5,9 +5,15 @@ Deals::Application.routes.draw do
   post  '/welcome'        =>      'Cities#welcome'
   match '/admin'          =>      'Admin::Pages#index'
 
-  resources :cities,      only: :show
-  resources :vendors,     only: :show
-  resources :offers,      only: :show
+  resources :cities, only: :show do
+    member do
+      get 'expiring'
+      get 'best'
+      get 'popular'
+    end
+  end
+  resources :vendors, only: :show
+  resources :offers, only: :show
 
   namespace :admin do
     match '/login',       to:     'Sessions#new'

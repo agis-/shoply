@@ -15,8 +15,8 @@ class Offer < ActiveRecord::Base
   validates :expires_on, presence: true, date: { after: :starts_on, message: "Must be after the starting date" }
 
   scope :active,   lambda { where("starts_on <= ? AND expires_on >= ?", Date.current, Date.current) }
-  # scope :expiring, lambda { where("starts_on <= ? AND expires_on <= ?", Date.current, Date.tomorrow) }
-  # sure use scopes or DEFAULT SQL ORDERING?
+  scope :expiring, lambda { where("starts_on <= ? AND expires_on <= ?", Date.current, Date.tomorrow) }
+  # TO-DO scope :best
 
   self.per_page = 12
 

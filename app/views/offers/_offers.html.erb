@@ -8,13 +8,10 @@
 
 <% if controller_name == 'cities' && !params[:c] %>
 <div class="row-fluid row-offers">
-  <div class="span12" style="text-align:center">
-    <button class="btn btn-large" type="submit">
-      Εμφάνιση περισσότερων
-    </button>
+  <div class="span12" style="text-align: right;">
+    <%= will_paginate offers %>
   </div>
 </div>
 
-<%= will_paginate offers %>
 <% end %>
 

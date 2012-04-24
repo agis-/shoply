@@ -386,14 +386,16 @@ div#more-from-vendor {
 /*          WELCOME PAGE          */
 
 body#welcome {
-  background: @paletteDarkBlue;
+  background: url(welcome_bg.jpg) no-repeat;
   font-family: Arial, sans-serif;
 
   div.welcome {
-    background: url(welcome-bg.png) center no-repeat;
+    background: @paletteDarkBlue url(welcome-bg.png) center no-repeat;
     float:none;
     margin-top:15%;
     .center-block;
+    border: 7px solid @paletteDarkBlue;
+    .border-radius(5px);
   }
 
  .left {

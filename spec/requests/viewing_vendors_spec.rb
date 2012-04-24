@@ -22,7 +22,7 @@ feature "Viewing a Vendor page" do
       visit vendor_path(vendor)
     end
 
-    it "takes you in if you've chosen a City" do
+    it "takes you in after you've chosen a City" do
       current_path.should == vendor_path(vendor)
     end
 

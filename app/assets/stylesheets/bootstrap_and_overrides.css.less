@@ -385,38 +385,54 @@ div#more-from-vendor {
 
 /*          WELCOME PAGE          */
 
-body#welcome {
-  background: url(welcome_bg.jpg) no-repeat;
-  font-family: Arial, sans-serif;
+html#welcome {
+  background: url(welcome/bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 
-  div.welcome {
-    background: @paletteDarkBlue url(welcome-bg.png) center no-repeat;
-    float:none;
-    margin-top:15%;
-    .center-block;
-    border: 7px solid @paletteDarkBlue;
-    .border-radius(5px);
+  body {
+    font-family: "Helvetica Neue", Arial, Verdana, sans-serif;
+    background: none;
+
+    div#welcome-container {
+      margin: 0 17% 0 auto;
+      width: 500px;
+    }
+
+    div#city {
+      margin-top:50px;
+      .border-radius(5px);
+      padding: 35px 30px;
+      .box-shadow(1px 1px 15px #666);
+      #gradient > .vertical(#fff, #efefef);
+      width: 400px;
+    }
+
+    div#logo {
+      background: url(welcome/logo.png) no-repeat top center;
+      width: 460px;
+      height: 49px;
+      margin-top: 50px;
+    }
+
+    form { margin: 0; }
+
+    select {
+      margin: 15px 0;
+      width: 75%;
+    }
+
+    input.btn {
+      padding: 10px 30px;
+      margin-right: auto;
+    }
+
+    label {
+      font-size: 28px;
+      color: #555;
+      font-weight: bold;
+    }
   }
-
- .left {
-    margin-top: 111px;
-    text-align:center;
-  }
-
-  .right {
-    padding: 30px 0;
-    text-align: right;
-    margin-top: 65px;
-    background: url(welcome-separator.gif) top left repeat-y;
-
-    select { margin: 15px 0; }
-  }
-
-  label {
-    font-size: 30px;
-    color: @paletteGrey;
-  }
-  input.btn { padding: 10px 30px; }
 }
-
-

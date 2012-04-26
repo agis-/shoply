@@ -1,17 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html id="welcome">
 <head>
   <title><%= yield :title %> - Shoply</title>
   <%= stylesheet_link_tag    "application", media: "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body id="welcome">
+<body>
 
-<div class="container">
-  <div class="row-fluid welcome">
-    <%= yield %>
-  </div>
+<div id="welcome-container">
+  <%= yield %>
 </div>
 
 </body>

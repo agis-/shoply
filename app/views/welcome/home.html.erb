@@ -1,13 +1,13 @@
-<div class="span4 left">
-  <img src="assets/welcome-logo.png" width="154" height="51" />
+
+<div id="logo">
 </div>
 
-<div class="span6 right">
-
+<div id="city">
   <%= form_tag welcome_path do %>
     <label>Επιλέξτε την πόλη σας:</label>
     <%= collection_select(:selected_city, :id, City.all, :id, :name) %>
     <br />
-    <%= submit_tag "Συνέχεια", class: "btn btn-success btn-large" %>
+    <%= submit_tag "Συνέχεια ›", class: "btn btn-success btn-large" %>
   <% end %>
 </div>
+

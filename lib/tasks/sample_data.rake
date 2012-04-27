@@ -28,36 +28,6 @@ def make_vendors
                   username: 'lidl',
                   password: 'tetete',
                   password_confirmation: 'tetete'
-
-  Vendor.create!  name: 'Carrefour',
-                  email: 'carrefour@app.com',
-                  username: 'carrefour',
-                  password: 'tetete',
-                  password_confirmation: 'tetete'
-
-  Vendor.create!  name: 'Μαρινόπουλος',
-                  email: 'marinopoulos@app.com',
-                  username: 'marinopoulos',
-                  password: 'tetete',
-                  password_confirmation: 'tetete'
-
-  Vendor.create!  name: 'Αρβανιτίδης',
-                  email: 'arvanitidis@app.com',
-                  username: 'arvanitidis',
-                  password: 'tetete',
-                  password_confirmation: 'tetete'
-
-  Vendor.create!  name: 'Βερόπουλος',
-                  email: 'veropoulos@app.com',
-                  username: 'veropoulos',
-                  password: 'tetete',
-                  password_confirmation: 'tetete'
-
-  Vendor.create!  name: 'Dia',
-                  email: 'dia@app.com',
-                  username: 'dia',
-                  password: 'tetete',
-                  password_confirmation: 'tetete'
 end
 
 def make_offers

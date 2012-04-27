@@ -34,8 +34,12 @@ feature "Viewing a Vendor page" do
       should have_css 'a.dropdown-toggle', text: city.name
     end
 
-    it "displays the proper heading" do
-      should have_selector 'h1', text: vendor.name
+    it "displays the proper page title" do
+      should have_selector 'title', text: vendor.name
+    end
+
+    it "displays the proper broadcast" do
+      # TODO
     end
   end
 end

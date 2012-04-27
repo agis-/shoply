@@ -1,10 +1,11 @@
 class Vendor < ActiveRecord::Base
-  attr_accessible :name, :username, :email, :password, :password_confirmation
+  attr_accessible :name, :username, :email, :password, :password_confirmation, :broadcast
 
   validates :name, presence: true, length: { minimum: 3, maximum: 20 }
   validates :email, presence: true
   validates :username, presence: true
   validates :password, presence: true
+  validates :broadcast, length: { maximum: 90 }
 
   has_many :offers, dependent: :destroy
   has_many :categories, through: :offers, uniq: true

@@ -1,9 +1,9 @@
-<% provide :sidebar, 'shared/categories_menu' %>
+<% content_for :sidebar, 'shared/categories_menu' %>
 <% provide :title, @vendor.name %>
 
 <div class="row-fluid">
   <div class="span12">
-    <h1>Προσφορές από <%= @vendor.name %></h1>
+    <%= render 'broadcast' unless @vendor.broadcast.nil? %>
   </div>
 </div>
 

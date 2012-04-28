@@ -12,5 +12,4 @@ describe OffersController do
       assigns(:offer).should == offer
     end
   end
-
 end

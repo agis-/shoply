@@ -10,7 +10,7 @@ class Admin::AdminController < ApplicationController
   def require_login
     unless logged_in?
       flash[:notice] = t(:login_required)
-      redirect_to admin_login_url
+      redirect_to admin_login_path
     end
   end
 end

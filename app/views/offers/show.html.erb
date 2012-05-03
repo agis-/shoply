@@ -1,13 +1,13 @@
 <% title @offer.title + " / " + @vendor.name %>
 
-<div class="row-fluid">
+<div class="row-fluid" id="offer-title">
   <div class="span12 offer-title">
     <h1><%= @offer.title %></h1>
     <h2 class="vendor">από <%= link_to @vendor.name, @vendor %></h2>
   </div>
 </div>
 
-<div class="row-fluid">
+<div class="row-fluid" id="offer-details">
   <div class="span5" id="offer-img">
     <%= image_tag @offer.image.url :normal %>
   </div>
@@ -61,9 +61,18 @@
     </div>
 
     <div class="row-fluid" id="offer-share">
-      <img src="/assets/social.png" />
-      <div class="recommend"><a href="#" class="btn btn-mini">Πρότεινέ το σε φίλο</a></div>
+      <a href="#" class="btn btn-mini" style="float:left">Πρότεινέ το σε φίλο</a>
+      <img src="/assets/social.png" style="float:right" />
     </div>
+  </div>
+</div>
 
+<div class="row-fluid" id="offer-desc">
+  <div class="span12 well">
+    <ul>
+      <li>Τώρα σε μορφή gel</li>
+      <li>Ελληνικό προϊόν, ποιότητας Α'</li>
+      <li>20% δωρεάν προϊόν</li>
+  </ul>
   </div>
 </div>

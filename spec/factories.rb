@@ -5,6 +5,7 @@ FactoryGirl.define do
     username "some-supermarket"
     password "foobar"
     password_confirmation "foobar"
+    broadcast "some broadcast here"
   end
 
   factory :offer do

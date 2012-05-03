@@ -23,7 +23,7 @@ feature "Viewing an Offer page" do
       visit offer_path(offer)
     end
 
-    it "takes you in if you've chosen a City" do
+    it "takes you in" do
       current_path.should == offer_path(offer)
     end
 

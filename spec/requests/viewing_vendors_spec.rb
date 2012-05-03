@@ -22,24 +22,21 @@ feature "Viewing a Vendor page" do
       visit vendor_path(vendor)
     end
 
-    it "takes you in after you've chosen a City" do
+    it "takes you in" do
       current_path.should == vendor_path(vendor)
     end
 
-    it "sets the vendor in the navbar" do
+    it "sets the selected Vendor" do
       should have_css 'a.dropdown-toggle', text: vendor.name
     end
 
-    it "selects the correct City in the navbar" do
-      should have_css 'a.dropdown-toggle', text: city.name
-    end
 
     it "displays the proper page title" do
       should have_selector 'title', text: vendor.name
     end
 
     it "displays the proper broadcast" do
-      # TODO
+      should have_css '.alert-success', text: vendor.broadcast
     end
   end
 end

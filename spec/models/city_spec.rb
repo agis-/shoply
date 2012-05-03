@@ -22,7 +22,7 @@ describe City do
   end
 
   describe "with too long title" do
-    before { @city.name = 'a' * 21 }
+    before { @city.name = 'a' * 16 }
     it { should_not be_valid }
   end
 end

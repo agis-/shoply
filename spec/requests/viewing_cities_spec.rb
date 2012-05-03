@@ -26,11 +26,11 @@ feature "Viewing a City page" do
       current_path.should == city_path(city)
     end
 
-    it "defaults to all vendors in the navbar" do
+    it "defaults to all Vendors" do
       should have_css 'a.dropdown-toggle', text: 'Όλα τα Supermarkets'
     end
 
-    it "selects the correct City in the navbar" do
+    it "sets the selected City" do
       should have_css 'a.dropdown-toggle', text: city.name
     end
 

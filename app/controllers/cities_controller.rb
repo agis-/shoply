@@ -8,7 +8,7 @@ class CitiesController < ApplicationController
     if params[:c]
       @offers = @city.offers.active.where("category_id = ?", params[:c]).page(params[:page])
     else
-      @offers = @city.offers.active.page(params[:page])
+      @offers = @city.offers.active.order("RANDOM()").page(params[:page])
     end
   end
 

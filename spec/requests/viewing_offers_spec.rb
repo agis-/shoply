@@ -59,6 +59,10 @@ feature "Viewing an Offer page" do
     it "selects the correct City in the navbar" do
       should have_css 'a.dropdown-toggle', text: city.name
     end
+
+    it "displays offer description" do
+      should have_content offer.description
+    end
   end
 end
 

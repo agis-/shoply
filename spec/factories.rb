@@ -13,6 +13,7 @@ FactoryGirl.define do
     initial_price 16.55
     starts_on     Date.today
     expires_on    Date.today + 3
+    description   "sample description goes here bla"
     vendor
     category
   end

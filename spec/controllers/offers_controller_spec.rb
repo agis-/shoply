@@ -1,4 +1,3 @@
-# encoding: utf-8
 require 'spec_helper'
 
 describe OffersController do
@@ -29,9 +28,8 @@ describe OffersController do
       end
 
       it "assigns more offers from vendor" do
-
+        # TODO
       end
     end
-
   end
 end

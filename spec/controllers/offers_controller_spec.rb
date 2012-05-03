@@ -15,16 +15,21 @@ describe OffersController do
     end
 
     context "returning user" do
-      before { cookies[:city_id] = city.id }
+      before do
+        cookies[:city_id] = city.id
+        get :show, id: offer.id
+      end
 
       it "assigns the offer" do
-        get :show, id: offer.id
         assigns(:offer).should == offer
       end
 
       it "assigns the vendor" do
-        get :show, id: offer.id
         assigns(:vendor).should == offer.vendor
+      end
+
+      it "assigns more offers from vendor" do
+
       end
     end
 

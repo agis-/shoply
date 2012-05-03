@@ -8,7 +8,8 @@ describe Offer do
                                         initial_price: 123.45,
                                         starts_on: Date.today,
                                         expires_on: Date.today + 3,
-                                        category_id: category.id ) }
+                                        category_id: category.id,
+                                        description: "testing 123" ) }
 
   subject { @offer }
 
@@ -18,6 +19,7 @@ describe Offer do
   it { should respond_to :starts_on }
   it { should respond_to :expires_on }
   it { should respond_to :discount }
+  it { should respond_to :description }
 
   it { should respond_to :vendor }
   it { should respond_to :category }
@@ -86,6 +88,18 @@ describe Offer do
   describe "with expiry date same as starting date" do
     before { @offer.expires_on = @offer.starts_on }
     it { should_not be_valid }
+  end
+
+  # DESCRIPTION
+
+  describe "with too long description" do
+    before { @offer.description = 'a' * 141 }
+    it { should_not be_valid }
+  end
+
+  describe "with no description" do
+    before { @offer.description = "" }
+    it { should be_valid }
   end
 
   # MISC

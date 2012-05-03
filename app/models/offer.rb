@@ -1,5 +1,6 @@
 class Offer < ActiveRecord::Base
-  attr_accessible :title, :price, :initial_price, :starts_on, :expires_on, :image, :category_id
+  attr_accessible :title, :price, :initial_price, :starts_on, :expires_on,
+                  :image, :category_id, :description
 
   belongs_to :vendor
   belongs_to :category
@@ -13,10 +14,11 @@ class Offer < ActiveRecord::Base
   validates :price, presence: true, numericality: { less_than: :initial_price }, length: { maximum: 6 }
   validates :starts_on, presence: true, date: { after: Date.current.prev_year, message: "Too old!" }
   validates :expires_on, presence: true, date: { after: :starts_on, message: "Must be after the starting date" }
+  validates :description, length: { maximum: 140 }
 
   scope :active,   lambda { where("starts_on <= ? AND expires_on >= ?", Date.current, Date.current) }
   scope :expiring, lambda { where("starts_on <= ? AND expires_on <= ?", Date.current, Date.tomorrow) }
-  # TO-DO scope :best
+  # TODO: more scopes
 
   self.per_page = 12
 

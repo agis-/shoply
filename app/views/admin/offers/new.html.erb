@@ -22,5 +22,8 @@
   <%= f.label "Κατηγορία" %>
   <%= collection_select(:offer, :category_id, Category.all, :id, :title) %>
 
-  <%= f.submit "Create" %>
+  <%= f.label :description %>
+  <%= f.text_area :description, size: "50x10" %>
+  <br />
+  <%= f.submit class: "btn btn-large btn-primary" %>
 <% end %>

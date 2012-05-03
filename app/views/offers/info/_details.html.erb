@@ -1,0 +1,59 @@
+<div class="row-fluid" id="offer-details">
+  <div class="span5" id="offer-img">
+    <%= image_tag @offer.image.url :normal %>
+  </div>
+
+  <div class="span7">
+    <div class="row-fluid" id="offer-value">
+      <div class="span3" id="offer-price">
+        <div class="inner">
+          <span class="price">
+            <%= price(@offer.price) %>
+          </span>
+          <span class="initial-price">
+            από <%= price(@offer.initial_price) %>
+          </span>
+        </div>
+      </div>
+
+      <div class="span9" id="offer-info">
+        <div class="row-fluid">
+          <div class="span4 info-section first">
+            <div class="inner">
+              <h5>έκπτωση</h5>
+              <%= discount(@offer) %>
+            </div>
+          </div>
+
+          <div class="span4 info-section">
+            <div class="inner">
+              <h5>κερδίζετε</h5>
+              <%= win(@offer) %>
+            </div>
+          </div>
+
+          <div class="span4 info-section last">
+            <div class="inner">
+              <h5>ποσότητα</h5>
+              300γρ.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="row-fluid" id="offer-expiry">
+      <div class="span12">
+        <hr />
+        Λήγει σε: <span style="font-size: 20px"><%= expires(@offer)  %></span>
+        <hr />
+      </div>
+    </div>
+
+    <div class="row-fluid" id="offer-share">
+      <a href="#" class="btn btn-mini" style="float:left">Πρότεινέ το σε φίλο</a>
+      <img src="/assets/social.png" style="float:right" />
+    </div>
+  </div>
+</div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120503165416) do
+ActiveRecord::Schema.define(:version => 20120507132600) do
 
   create_table "categories", :force => true do |t|
     t.string   "title"
@@ -52,10 +52,14 @@ ActiveRecord::Schema.define(:version => 20120503165416) do
     t.string   "username"
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
     t.string   "password_digest"
     t.text     "broadcast"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
   end
 
   add_index "vendors", ["email"], :name => "index_vendors_on_email", :unique => true

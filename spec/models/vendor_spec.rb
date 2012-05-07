@@ -13,6 +13,7 @@ describe Vendor do
   it { should respond_to :password_confirmation }
   it { should respond_to :authenticate }
   it { should respond_to :broadcast }
+  it { should respond_to :logo }
 
   it { should respond_to :offers }
   it { should respond_to :cities }

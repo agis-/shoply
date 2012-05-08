@@ -8,6 +8,8 @@ gem 'paperclip', '~> 2.7'
 gem 'will_paginate', '~> 3.0'
 gem 'bootstrap-will_paginate'
 
+gem 'unicorn'
+
 group :test do
   gem 'capybara', '1.1.2'
   gem 'factory_girl_rails', '~> 3.0'

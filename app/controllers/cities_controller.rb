@@ -31,7 +31,7 @@ class CitiesController < ApplicationController
       cookies[:city_id] = params[:selected_city][:id]
     elsif params.has_key?(:id)         # then we dont have to set params[:id], it's already set
       # TODO: make it permanent
-      cookies.[:city_id] = params[:id]
+      cookies[:city_id] = params[:id]
     else                               # persist param[:id] also to the homepage
       params[:id] = cookies[:city_id] || City.first.id
     end
